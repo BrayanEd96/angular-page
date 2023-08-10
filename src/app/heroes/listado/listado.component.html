@@ -1,0 +1,25 @@
+<h2>Hero List</h2>
+
+<div>
+    <h3 *ngIf="deletedHeros.length !== 0; else smallEmpty">Hero deleted: </h3>
+    <p>
+        <small *ngFor="let heroDel of deletedHeros" >{{ heroDel }}, </small>
+    </p>
+    <ng-template #smallEmpty>
+            <small> Empty  </small>
+    </ng-template>
+</div>
+
+<Button *ngIf="heros.length != 0" (click)="deleteHero()">
+    Delete Hero
+</Button>
+
+<Button *ngIf="deletedHeros.length != 0" (click)="addHero()">
+    Add new Hero
+</Button>
+
+<ul>
+    <li *ngFor="let hero of heros" >{{ hero || 'Empty' }}</li>
+    <li *ngIf="heros.length == 0" >No heros here</li>
+</ul>
+

@@ -1,0 +1,8 @@
+<h3>
+    Characters
+</h3>
+<hr>
+<ul>
+    <li *ngFor="let character of allCharacters">{{character.name}} - {{character.power|number}}</li>
+    <li *ngIf="allCharacters.length == 0">No characters yet</li>
+</ul>
